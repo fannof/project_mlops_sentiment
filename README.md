@@ -1,4 +1,14 @@
-# project_mlops_sentiment
-Mengembangkan Machine Learning Pipeline untuk Sentiment Analysis Menggunakan Tensorflow Extended
+# Submission 1: Project Machine Learning Pipeline (MLOps) - Prediksi Sentimen Positif dan Negatif
+Nama: Novan Nur Hidayat
 
-Langkah Pertama
+Username dicoding: fannof
+
+| | Deskripsi |
+| ----------- | ----------- |
+| Dataset | reviews_ulasan.csv. Dataset merupakan hasil scraping dari ulasan aplikasi MyIM3 di Google Play Store. |
+| Masalah | Analisis sentimen merupakan simpulan dari sentimen yang disampaikan oleh seseorang mengenai topik tertentu. Ketidakmampuan manusia dalam menangani data dengan jumlah besar yang terus berkembang dapat menyebabkan kesalahan dalam layanan pelanggan, oleh karena itu dibutuhkan suatu pendekatan yaitu Machine Learning. |
+| Solusi machine learning | Membuat arsitektur model dengan Tensorflow Extended (TFX) menggunakan metode Machine Learning Operations (MLOps) untuk memprediksi apakah ulasan tersebut termasuk dalam kategori positif ataupun negatif. |
+| Metode pengolahan | Menggunakan metode yang pertama yaitu data ingestion, dalam proses ini menggunakan komponen ExampleGen. Metode yang kedua yaitu data validation, dalam proses tersebut dibuat menggunakan beberapa komponen seperti StatisticGen, SchemaGen, dan ExampleValidator. Dan proses yang ketiga yaitu data preprocessing, dalam proses ini menggunakan komponen Transform. |
+| Arsitektur model | Input teks (kalimat) diubah menjadi urutan integer (token) melalui Text Vectorization. Token diubah menjadi embedding berdimensi 16 melalui Embedding layer. Global Average Pooling menghitung rata-rata embedding untuk mereduksi dimensi. Dua Dense layers dengan 64 dan 32 unit menangani representasi fitur yang lebih abstrak. Dense layer terakhir dengan 1 unit dan aktivasi sigmoid menghasilkan probabilitas untuk klasifikasi biner. |
+| Metrik evaluasi | ExampleCount menghitung jumlah contoh (data point) yang digunakan selama evaluasi. AUC mengukur performa model dalam hal kemampuan untuk membedakan antara dua kelas (positif dan negatif). Semakin tinggi nilai AUC (maksimum 1.0), semakin baik model dalam memprediksi kelas positif dengan benar tanpa salah memprediksi kelas negatif. FalsePositives (FP) menghitung jumlah prediksi yang salah di mana model memprediksi kelas positif, tetapi sebenarnya kelasnya adalah negatif. TruePositives (TP) menghitung jumlah prediksi yang benar di mana model memprediksi kelas positif dan kelas sebenarnya memang positif. FalseNegatives (FN) menghitung jumlah prediksi yang salah di mana model memprediksi kelas negatif, tetapi sebenarnya kelasnya adalah positif. TrueNegatives (TN) menghitung jumlah prediksi yang benar di mana model memprediksi kelas negatif dan kelas sebenarnya memang negatif. BinaryAccuracy menghitung persentase prediksi yang benar dari model untuk dua kelas (klasifikasi biner). |
+| Performa model | Dengan Akurasi 81%, model ini menunjukkan performa yang baik dalam mengklasifikasikan sampel dengan benar, baik untuk kelas positif maupun negatif. Loss sebesar 0.48 masih tergolong cukup baik, tetapi masih ada ruang untuk meningkatkan prediksi agar lebih mendekati label sebenarnya. AUC sebesar 0.88 menunjukkan model memiliki kemampuan yang sangat baik dalam membedakan kelas positif dan negatif. False Positives (235) dan False Negatives (332) menunjukkan bahwa ada beberapa kesalahan dalam prediksi positif dan negatif, yang perlu diperbaiki, terutama pada FN (karena kesalahan di kelas positif mungkin lebih signifikan). |
