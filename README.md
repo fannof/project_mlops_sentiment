@@ -1,4 +1,4 @@
-# Submission 1: Project Machine Learning Pipeline (MLOps) - Prediksi Sentimen Positif dan Negatif
+# Submission 1: Project Machine Learning Pipeline (MLOps) - Prediksi Sentimen Positif dan Negatif 
 Nama: Novan Nur Hidayat
 
 Username dicoding: fannof
